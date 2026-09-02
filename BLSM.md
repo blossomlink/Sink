@@ -20,6 +20,18 @@ Rules that apply when creating or editing links:
 - Import (Links page, Import button, or `POST /api/link/import`) skips slugs that already exist. To correct an imported link, delete it first, then import again. The API accepts up to 100 links per call.
 - A JSON export (Links page, Export button) is the backup to keep locally. D1 is the authoritative store and a cron job writes daily backups to R2.
 
+## Managing links from an agent
+
+The REST API does everything the dashboard does. `skills/sink/SKILL.md` documents the endpoints; use base URL `https://blsm.link` and the token from `SINK_TOKEN` in `.env` as the Bearer token. For example, to create a link with a JP rule:
+
+```bash
+http POST https://blsm.link/api/link/create "Authorization: Bearer $SINK_TOKEN" \
+  slug=my-item url='https://www.amazon.com/dp/XXXXXXXXXX?tag=us-tag-20' \
+  geo:='{"JP":"https://www.amazon.co.jp/dp/XXXXXXXXXX?tag=jp-tag-22"}' comment='Video title'
+```
+
+Edit with `PUT /api/link/edit` (send the full link including `geo`), delete with `POST /api/link/delete` and `{"slug": "..."}`. One correction to the skill: `GET /api/link/list` returns `{ links, list_complete, cursor }`, not `{ keys }`.
+
 ## Deployment layout
 
 - Cloudflare account: Blossomlink. Worker name: `sink`. Custom domain `blsm.link` is declared in `wrangler.jsonc`; `workers.dev` and preview URLs are disabled there too.
