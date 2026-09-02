@@ -1,5 +1,7 @@
 # Sink Repository Guide
 
+This fork is deployed at blsm.link; see `BLSM.md` for the deployment layout, dashboard rules, and upgrade procedure.
+
 ## Non-obvious constraints
 
 - Write all documentation and code comments in English.
