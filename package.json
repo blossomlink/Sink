@@ -102,7 +102,7 @@
     "vue-sonner": "^2.0.9",
     "vue-tsc": "^3.3.7",
     "vue3-simple-icons": "^16.10.0",
-    "wrangler": "^4.110.0",
+    "wrangler": "^4.128.0",
     "zod": "^4.4.3"
   },
   "simple-git-hooks": {
