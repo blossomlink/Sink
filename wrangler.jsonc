@@ -19,7 +19,9 @@
   "keep_vars": true,
   "vars": {
     "NUXT_REDIRECT_STATUS_CODE": "302",
-    "NUXT_CF_ACCOUNT_ID": "709667050059cbbfc9ff96f2ec207bf4"
+    "NUXT_CF_ACCOUNT_ID": "709667050059cbbfc9ff96f2ec207bf4",
+    "NUXT_HOME_URL": "https://www.youtube.com/@yuka",
+    "NUXT_NOT_FOUND_REDIRECT": "https://www.youtube.com/@yuka"
   },
   "upload_source_maps": true,
   "observability": {
